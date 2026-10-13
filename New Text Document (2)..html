@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Milkfrog University of Canada | RMUC</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            900: '#062c22',
+                            800: '#0a3d30',
+                            700: '#0f5242',
+                            600: '#146954',
+                            50: '#f0fdf9'
+                        },
+                        gold: {
+                            300: '#fde047',
+                            400: '#facc15',
+                            500: '#eab308',
+                            600: '#ca8a04',
+                            700: '#a16207'
+                        },
+                        slate: {
+                            850: '#131f33',
+                            900: '#0f172a'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Cinzel', 'Georgia', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFE259 0%, #FFA751 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-bg {
+            background: linear-gradient(rgba(6, 44, 34, 0.82), rgba(15, 23, 42, 0.90)), url('https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?q=80&w=2069&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #062c22;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #ca8a04;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans text-slate-800 antialiased selection:bg-gold-500 selection:text-emerald-900 custom-scrollbar">
+
+    <!-- Top Utility Bar -->
+    <div class="bg-emerald-900 text-slate-200 text-xs py-2 px-4 border-b border-emerald-800/60 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+            <div class="flex items-center space-x-6">
+                <span class="inline-flex items-center gap-1 text-gold-400 font-semibold">
+                    <i class="fa-solid fa-graduation-cap"></i> RMUC Portal: Admissions Open for Fall 2027
+                </span>
+                <span class="hidden lg:inline text-slate-400">|</span>
+                <span class="hidden lg:inline hover:text-gold-300 transition-colors cursor-pointer" onclick="showToast('Campus Weather: 18°C Sunny in Crestwood, BC')">
+                    <i class="fa-solid fa-sun text-gold-400 mr-1"></i> Crestwood Campus: 18°C
+                </span>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <a href="#calculator" class="hover:text-gold-300 transition-colors"><i class="fa-solid fa-calculator mr-1"></i> Tuition Calc</a>
+                <a href="javascript:void(0)" onclick="openModal('portal')" class="hover:text-gold-300 transition-colors"><i class="fa-solid fa-user-lock mr-1"></i> Canvas / Portal</a>
+                <a href="#programs" class="hover:text-gold-300 transition-colors"><i class="fa-solid fa-book-open mr-1"></i> Library</a>
+                <a href="javascript:void(0)" onclick="showToast('Alumni network contains over 65,000 global leaders!')" class="hover:text-gold-300 transition-colors">Alumni</a>
+                
+                <!-- Language Selector -->
+                <div class="relative inline-block text-left">
+                    <button class="flex items-center gap-1 hover:text-gold-300 transition-colors font-medium">
+                        <i class="fa-solid fa-globe text-gold-400"></i> EN <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="bg-emerald-800 text-white shadow-xl sticky top-[33px] z-40 transition-all duration-300" id="main-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo & Branding -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-gold-300 to-gold-600 p-0.5 shadow-lg flex-shrink-0 group-hover:scale-105 transition-transform">
+                        <div class="w-full h-full bg-emerald-900 rounded-full flex items-center justify-center relative overflow-hidden">
+                            <!-- Frog Royal Crest Icon -->
+                            <i class="fa-solid fa-frog text-2xl text-gold-400"></i>
+                            <i class="fa-solid fa-crown text-[10px] text-gold-300 absolute -top-0.5"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="font-serif text-lg sm:text-xl font-bold tracking-wider text-white leading-tight">
+                            ROYAL MILKFROG
+                        </div>
+                        <div class="text-[10px] sm:text-xs text-gold-400 tracking-widest font-semibold uppercase">
+                            University of Canada
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-1 xl:space-x-4 font-medium text-sm">
+                    <a href="#about" class="px-3 py-2 rounded-lg hover:bg-emerald-700 hover:text-gold-300 transition-all">About</a>
+                    <a href="#academics" class="px-3 py-2 rounded-lg hover:bg-emerald-700 hover:text-gold-300 transition-all">Academics</a>
+                    <a href="#admissions" class="px-3 py-2 rounded-lg hover:bg-emerald-700 hover:text-gold-300 transition-all">Admissions</a>
+                    <a href="#research" class="px-3 py-2 rounded-lg hover:bg-emerald-700 hover:text-gold-300 transition-all">Research</a>
+                    <a href="#campus-tour" class="px-3 py-2 rounded-lg hover:bg-emerald-700 hover:text-gold-300 transition-all">Campus Life</a>
+                    <a href="#news" class="px-3 py-2 rounded-lg hover:bg-emerald-700 hover:text-gold-300 transition-all">News & Events</a>
+                </nav>
+
+                <!-- Search & Action Buttons -->
+                <div class="hidden sm:flex items-center space-x-3">
+                    <div class="relative">
+                        <input type="text" id="quick-search-input" onkeyup="handleHeaderSearch(event)" placeholder="Search programs..." class="bg-emerald-900/80 border border-emerald-700 text-xs text-white rounded-full pl-8 pr-4 py-2 focus:outline-none focus:ring-2 focus:ring-gold-400 w-36 lg:w-48 transition-all placeholder-emerald-400">
+                        <i class="fa-solid fa-magnifying-glass absolute left-2.5 top-2.5 text-xs text-emerald-400"></i>
+                    </div>
+                    <button onclick="openApplyModal()" class="bg-gradient-to-r from-gold-400 to-gold-600 hover:from-gold-500 hover:to-gold-700 text-emerald-950 font-bold px-4 py-2 rounded-full text-xs uppercase tracking-wider shadow-lg hover:shadow-gold-500/20 transform hover:-translate-y-0.5 transition-all">
+                        Apply Now
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button onclick="toggleMobileMenu()" class="lg:hidden text-slate-200 hover:text-white p-2 rounded-lg focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-emerald-900 border-t border-emerald-700 px-4 pt-2 pb-6 space-y-2">
+            <a href="#about" class="block px-3 py-2 rounded-md hover:bg-emerald-800 text-gold-300 font-medium">About RMUC</a>
+            <a href="#academics" class="block px-3 py-2 rounded-md hover:bg-emerald-800 text-white">Academics & Faculties</a>
+            <a href="#admissions" class="block px-3 py-2 rounded-md hover:bg-emerald-800 text-white">Admissions & Aid</a>
+            <a href="#research" class="block px-3 py-2 rounded-md hover:bg-emerald-800 text-white">Research Excellence</a>
+            <a href="#campus-tour" class="block px-3 py-2 rounded-md hover:bg-emerald-800 text-white">Campus Life</a>
+            <a href="#news" class="block px-3 py-2 rounded-md hover:bg-emerald-800 text-white">News & Announcements</a>
+            <div class="pt-4 border-t border-emerald-800 flex flex-col gap-2">
+                <button onclick="openApplyModal()" class="w-full bg-gold-500 text-emerald-950 font-bold py-2 rounded-lg text-center">
+                    Apply Now
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg relative min-h-[85vh] flex items-center justify-center text-white px-4 sm:px-6 lg:px-8 py-20 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-t from-emerald-950 via-transparent to-transparent opacity-80"></div>
+        
+        <div class="relative max-w-5xl mx-auto text-center space-y-8 z-10">
+            <!-- Royal Emblem Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-panel text-gold-300 text-xs sm:text-sm font-semibold tracking-wide uppercase border border-gold-500/30 animate-pulse">
+                <i class="fa-solid fa-crown text-gold-400"></i> Chartered by Royal Decree &bull; Est. 1888
+            </div>
+
+            <!-- Headline -->
+            <h1 class="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight">
+                Excellence in <span class="gold-gradient-text">Leap & Knowledge</span>
+            </h1>
+
+            <p class="max-w-3xl mx-auto text-slate-200 text-base sm:text-xl font-light leading-relaxed">
+                Empowering world-class thinkers, leaders, and ecological innovators to take monumental leaps forward. Join Canada's premier institution for amphibious sciences and global business.
+            </p>
+
+            <!-- Hero Action Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                <a href="#programs" class="w-full sm:w-auto bg-gold-500 hover:bg-gold-400 text-emerald-950 font-bold px-8 py-4 rounded-xl text-base shadow-xl hover:shadow-gold-500/20 transform hover:-translate-y-1 transition-all flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-compass"></i> Explore Programs
+                </a>
+                <button onclick="openApplyModal()" class="w-full sm:w-auto glass-panel hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-xl text-base border border-white/30 transform hover:-translate-y-1 transition-all flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-paper-plane text-gold-400"></i> Start Application
+                </button>
+            </div>
+
+            <!-- Quick Quick-Links Floating Bar -->
+            <div class="pt-12 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto text-left">
+                <div class="glass-panel p-4 rounded-xl hover:bg-white/15 transition-all cursor-pointer" onclick="scrollToSection('academics')">
+                    <i class="fa-solid fa-graduation-cap text-gold-400 text-xl mb-1"></i>
+                    <h3 class="font-serif font-bold text-sm text-white">Undergraduate</h3>
+                    <p class="text-xs text-slate-300">120+ specialized degrees</p>
+                </div>
+                <div class="glass-panel p-4 rounded-xl hover:bg-white/15 transition-all cursor-pointer" onclick="scrollToSection('academics')">
+                    <i class="fa-solid fa-microscope text-gold-400 text-xl mb-1"></i>
+                    <h3 class="font-serif font-bold text-sm text-white">Graduate Studies</h3>
+                    <p class="text-xs text-slate-300">Master & Doctoral programs</p>
+                </div>
+                <div class="glass-panel p-4 rounded-xl hover:bg-white/15 transition-all cursor-pointer" onclick="scrollToSection('calculator')">
+                    <i class="fa-solid fa-hand-holding-dollar text-gold-400 text-xl mb-1"></i>
+                    <h3 class="font-serif font-bold text-sm text-white">Scholarships</h3>
+                    <p class="text-xs text-slate-300">$14M+ awarded annually</p>
+                </div>
+                <div class="glass-panel p-4 rounded-xl hover:bg-white/15 transition-all cursor-pointer" onclick="scrollToSection('campus-tour')">
+                    <i class="fa-solid fa-building-columns text-gold-400 text-xl mb-1"></i>
+                    <h3 class="font-serif font-bold text-sm text-white">Virtual Tour</h3>
+                    <p class="text-xs text-slate-300">360° Crestwood Campus</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="bg-emerald-950 text-white border-y border-gold-500/20 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center divide-y lg:divide-y-0 lg:divide-x divide-emerald-800">
+                <div class="pt-4 lg:pt-0">
+                    <div class="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gold-400" id="stat-students">18,500+</div>
+                    <div class="text-xs sm:text-sm text-slate-300 uppercase tracking-wider font-medium mt-1">Full-Time Students</div>
+                </div>
+                <div class="pt-4 lg:pt-0">
+                    <div class="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gold-400">98.4%</div>
+                    <div class="text-xs sm:text-sm text-slate-300 uppercase tracking-wider font-medium mt-1">Graduate Employment Rate</div>
+                </div>
+                <div class="pt-4 lg:pt-0">
+                    <div class="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gold-400">120+</div>
+                    <div class="text-xs sm:text-sm text-slate-300 uppercase tracking-wider font-medium mt-1">Programs & Specializations</div>
+                </div>
+                <div class="pt-4 lg:pt-0">
+                    <div class="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gold-400">#1 Global</div>
+                    <div class="text-xs sm:text-sm text-slate-300 uppercase tracking-wider font-medium mt-1">Aquatic & Amphibian Biology</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <div class="inline-block px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full text-xs font-bold uppercase tracking-wider">
+                        Welcome to RMUC
+                    </div>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-extrabold text-emerald-950 leading-tight">
+                        A Legacy of Academic Prestige & Ecological Leadership
+                    </h2>
+                    <p class="text-slate-600 leading-relaxed text-base">
+                        Founded in 1888 along the serene waters of British Columbia, **Royal Milkfrog University of Canada** is renowned for its commitment to high-impact research, world-class teaching, and sustainable development.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed text-base">
+                        Our namesake, the resilient and adaptable Amazonian Milkfrog, symbolizes our institutional ethos: adaptability, vibrant growth, and protective stewardship of our natural and technological ecosystems.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-4 pt-2">
+                        <div class="border-l-4 border-gold-500 pl-4">
+                            <h4 class="font-bold text-slate-900 font-serif">Pioneering Research</h4>
+                            <p class="text-xs text-slate-500">Top-tier labs for environmental bio-engineering.</p>
+                        </div>
+                        <div class="border-l-4 border-emerald-700 pl-4">
+                            <h4 class="font-bold text-slate-900 font-serif">Global Network</h4>
+                            <p class="text-xs text-slate-500">140+ partner institutions worldwide.</p>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="#campus-tour" class="inline-flex items-center gap-2 text-emerald-800 font-bold hover:text-gold-600 transition-colors">
+                            Discover RMUC Heritage <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-gold-500/20">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1000&auto=format&fit=crop" alt="RMUC Campus Library" class="w-full h-[420px] object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-emerald-950/80 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6 text-white">
+                            <div class="font-serif text-xl font-bold">The Great Canopy Library</div>
+                            <div class="text-xs text-slate-300">Housing over 2.4 Million rare manuscripts & bio-data archives.</div>
+                        </div>
+                    </div>
+                    <!-- Floating Badge -->
+                    <div class="absolute -top-6 -right-6 bg-emerald-900 text-gold-400 p-6 rounded-2xl shadow-xl hidden sm:flex flex-col items-center justify-center border border-gold-500/30">
+                        <i class="fa-solid fa-award text-3xl mb-1"></i>
+                        <span class="font-serif font-bold text-lg text-white">5-Star Rated</span>
+                        <span class="text-[10px] text-slate-300 uppercase tracking-widest">QS World Rankings</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Explorer Section -->
+    <section id="academics" class="py-20 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="font-serif text-3xl sm:text-4xl font-extrabold text-emerald-950">
+                    Explore Academic Programs
+                </h2>
+                <p class="text-slate-600 mt-2 text-base">
+                    Find your true calling across our world-renowned faculties. Filter by level or keyword.
+                </p>
+
+                <!-- Search & Filters -->
+                <div class="mt-8 flex flex-col sm:flex-row gap-4 items-center justify-center">
+                    <!-- Search Input -->
+                    <div class="relative w-full sm:w-80">
+                        <input type="text" id="program-search" oninput="filterPrograms()" placeholder="Search degree name (e.g., Biology, Business)..." class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 pl-10 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-800 shadow-sm">
+                        <i class="fa-solid fa-search absolute left-3.5 top-3.5 text-slate-400 text-sm"></i>
+                    </div>
+
+                    <!-- Category Tabs -->
+                    <div class="flex flex-wrap gap-2 justify-center" id="program-tabs">
+                        <button onclick="setProgramFilter('all')" class="prog-tab active bg-emerald-800 text-white px-4 py-2.5 rounded-xl text-xs font-bold transition-all shadow">
+                            All Programs
+                        </button>
+                        <button onclick="setProgramFilter('undergrad')" class="prog-tab bg-white text-slate-700 hover:bg-slate-200 px-4 py-2.5 rounded-xl text-xs font-bold transition-all shadow-sm">
+                            Undergraduate
+                        </button>
+                        <button onclick="setProgramFilter('grad')" class="prog-tab bg-white text-slate-700 hover:bg-slate-200 px-4 py-2.5 rounded-xl text-xs font-bold transition-all shadow-sm">
+                            Graduate & PhD
+                        </button>
+                        <button onclick="setProgramFilter('online')" class="prog-tab bg-white text-slate-700 hover:bg-slate-200 px-4 py-2.5 rounded-xl text-xs font-bold transition-all shadow-sm">
+                            Online & Executive
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Program Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="programs-grid">
+                <!-- Cards dynamically populated via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Campus Highlights / Virtual Tour -->
+    <section id="campus-tour" class="py-20 bg-emerald-950 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-12">
+                <div>
+                    <span class="text-gold-400 font-bold uppercase text-xs tracking-wider">Campus Life & Infrastructure</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-extrabold text-white mt-1">
+                        Experience Crestwood Campus
+                    </h2>
+                </div>
+                <p class="text-slate-300 max-w-md mt-4 lg:mt-0 text-sm">
+                    Situated on 450 acres of pristine lakefront and woodland in British Columbia, our state-of-the-art campus blends nature with modern tech.
+                </p>
+            </div>
+
+            <!-- Tour Navigation Tabs & Main Viewer -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                
+                <!-- Tab Controls -->
+                <div class="lg:col-span-4 space-y-3" id="tour-tabs">
+                    <div onclick="switchTourLocation(0)" class="tour-btn active p-4 rounded-xl bg-emerald-900 border-l-4 border-gold-400 cursor-pointer hover:bg-emerald-850 transition-all flex items-center gap-4">
+                        <i class="fa-solid fa-flask text-gold-400 text-xl"></i>
+                        <div>
+                            <h4 class="font-serif font-bold text-white text-sm">Bio-Simulated Aquatic Complex</h4>
+                            <p class="text-xs text-slate-400">30,000 sq ft climate laboratory</p>
+                        </div>
+                    </div>
+
+                    <div onclick="switchTourLocation(1)" class="tour-btn p-4 rounded-xl bg-emerald-900/40 border-l-4 border-transparent cursor-pointer hover:bg-emerald-900 transition-all flex items-center gap-4">
+                        <i class="fa-solid fa-book text-gold-400 text-xl"></i>
+                        <div>
+                            <h4 class="font-serif font-bold text-white text-sm">Royal Pavilion Library</h4>
+                            <p class="text-xs text-slate-400">Quiet study zones & digital hub</p>
+                        </div>
+                    </div>
+
+                    <div onclick="switchTourLocation(2)" class="tour-btn p-4 rounded-xl bg-emerald-900/40 border-l-4 border-transparent cursor-pointer hover:bg-emerald-900 transition-all flex items-center gap-4">
+                        <i class="fa-solid fa-volleyball text-gold-400 text-xl"></i>
+                        <div>
+                            <h4 class="font-serif font-bold text-white text-sm">Leap Center Student Union</h4>
+                            <p class="text-xs text-slate-400">Recreation, food hall & athletic arena</p>
+                        </div>
+                    </div>
+
+                    <div onclick="switchTourLocation(3)" class="tour-btn p-4 rounded-xl bg-emerald-900/40 border-l-4 border-transparent cursor-pointer hover:bg-emerald-900 transition-all flex items-center gap-4">
+                        <i class="fa-solid fa-bed text-gold-400 text-xl"></i>
+                        <div>
+                            <h4 class="font-serif font-bold text-white text-sm">Emerald Residence Halls</h4>
+                            <p class="text-xs text-slate-400">Modern eco-friendly student housing</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Display Screen -->
+                <div class="lg:col-span-8 relative rounded-2xl overflow-hidden shadow-2xl h-[380px] sm:h-[450px]">
+                    <img id="tour-image" src="https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=1000&auto=format&fit=crop" alt="Campus Highlight" class="w-full h-full object-cover transition-all duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                    
+                    <div class="absolute bottom-6 left-6 right-6">
+                        <div class="inline-block px-3 py-1 bg-gold-500 text-emerald-950 font-bold text-[10px] uppercase rounded mb-2" id="tour-tag">Facility Highlight</div>
+                        <h3 class="font-serif text-2xl font-bold text-white" id="tour-title">Bio-Simulated Aquatic Complex</h3>
+                        <p class="text-slate-300 text-sm mt-1 max-w-xl" id="tour-desc">
+                            A world-first research facility providing exact micro-climate controls for amphibian genetics and ecosystem preservation studies.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Tuition Calculator & Admissions Section -->
+    <section id="admissions" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Info Column -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-emerald-800 font-bold uppercase text-xs tracking-wider">Plan Your Future</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-extrabold text-emerald-950 leading-tight">
+                        Admissions & Investment Calculator
+                    </h2>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        We believe exceptional education should be accessible. Estimate your annual tuition fees and potential scholarship eligibility with our interactive estimator.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3">
+                            <div class="p-2 bg-emerald-100 text-emerald-800 rounded-lg text-sm"><i class="fa-solid fa-circle-check"></i></div>
+                            <div>
+                                <h4 class="font-serif font-bold text-slate-900 text-sm">Automatic Entrance Scholarships</h4>
+                                <p class="text-xs text-slate-500">Applicants with an average above 88% are automatically considered for up to $8,000/year.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <div class="p-2 bg-emerald-100 text-emerald-800 rounded-lg text-sm"><i class="fa-solid fa-passport"></i></div>
+                            <div>
+                                <h4 class="font-serif font-bold text-slate-900 text-sm">International Student Support</h4>
+                                <p class="text-xs text-slate-500">Full visa guidance, orientation, and housing placement guarantee for first-year international students.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-2">
+                        <button onclick="openApplyModal()" class="bg-emerald-900 hover:bg-emerald-800 text-white font-bold px-6 py-3 rounded-xl text-sm shadow-md transition-all">
+                            Start Full Application <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Calculator Form Card -->
+                <div id="calculator" class="lg:col-span-7 bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-xl">
+                    <h3 class="font-serif font-bold text-xl text-emerald-950 mb-6 flex items-center gap-2">
+                        <i class="fa-solid fa-calculator text-gold-500"></i> Tuition & Fee Estimator (CAD)
+                    </h3>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <!-- Residency -->
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Student Residency</label>
+                            <select id="calc-residency" onchange="calculateTuition()" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-emerald-800">
+                                <option value="domestic">Canadian Citizen / PR</option>
+                                <option value="international">International Student</option>
+                            </select>
+                        </div>
+
+                        <!-- Degree Level -->
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Academic Level</label>
+                            <select id="calc-level" onchange="calculateTuition()" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-emerald-800">
+                                <option value="undergrad">Undergraduate Degree</option>
+                                <option value="grad">Graduate / Master's</option>
+                                <option value="phd">Doctoral (PhD)</option>
+                            </select>
+                        </div>
+
+                        <!-- Faculty Choice -->
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Faculty</label>
+                            <select id="calc-faculty" onchange="calculateTuition()" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-emerald-800">
+                                <option value="amphibian">Faculty of Amphibian Life Sciences</option>
+                                <option value="business">School of Royal Business</option>
+                                <option value="engineering">Frog Ecology & Engineering</option>
+                                <option value="arts">Faculty of Arts & Leap Arts</option>
+                            </select>
+                        </div>
+
+                        <!-- Residence Need -->
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-2">On-Campus Housing</label>
+                            <select id="calc-housing" onchange="calculateTuition()" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-emerald-800">
+                                <option value="none">Off-Campus / Living Home</option>
+                                <option value="standard">Standard Single Room + Meal Plan</option>
+                                <option value="suite">Royal Suite + Premium Meal Plan</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Estimate Display Box -->
+                    <div class="mt-8 bg-emerald-900 text-white rounded-xl p-6 border border-gold-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <div>
+                            <div class="text-xs text-gold-400 font-semibold uppercase tracking-wider">Estimated Total per Academic Year</div>
+                            <div class="font-serif text-3xl sm:text-4xl font-extrabold text-white mt-1" id="calc-total">$7,850 CAD</div>
+                            <div class="text-[11px] text-slate-300 mt-1">*Includes tuition, campus health insurance, and lab access fees.</div>
+                        </div>
+                        <button onclick="showToast('Estimate saved! Contact Financial Aid office for tailored payment plans.')" class="w-full sm:w-auto bg-gold-500 hover:bg-gold-400 text-emerald-950 font-bold px-5 py-3 rounded-lg text-xs uppercase tracking-wider transition-all whitespace-nowrap">
+                            Save Breakdown
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Spotlight -->
+    <section id="research" class="py-20 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-400 font-bold uppercase text-xs tracking-widest">Innovation & Impact</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-extrabold text-white mt-1">
+                    Pioneering Research Breakthroughs
+                </h2>
+                <p class="text-slate-400 mt-2 text-sm">
+                    RMUC faculty and student researchers are solving urgent climate, ecological, and biotechnological challenges.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Research Card 1 -->
+                <div class="bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-gold-500/50 transition-all group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=800&auto=format&fit=crop" alt="Lab Research" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 bg-emerald-900 text-gold-300 text-[10px] font-bold uppercase px-2.5 py-1 rounded">Bio-Genomics</span>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="font-serif font-bold text-lg text-white group-hover:text-gold-400 transition-colors">
+                            Amphibian Skin Secretions & Antimicrobial Therapies
+                        </h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Discovering natural peptide compounds from Trachycephalus resinifictrix to combat antibiotic-resistant bacterial strains.
+                        </p>
+                        <a href="javascript:void(0)" onclick="showToast('Opening RMUC Research Journal paper...')" class="inline-block text-xs font-bold text-gold-400 hover:underline pt-2">
+                            Read Journal Paper &rarr;
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Research Card 2 -->
+                <div class="bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-gold-500/50 transition-all group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=800&auto=format&fit=crop" alt="Wetland Restoration" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 bg-emerald-900 text-gold-300 text-[10px] font-bold uppercase px-2.5 py-1 rounded">Eco-Engineering</span>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="font-serif font-bold text-lg text-white group-hover:text-gold-400 transition-colors">
+                            Sub-Arctic Wetland Carbon Sink Optimization
+                        </h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            A 5-year study on maximizing peatland carbon sequestration through natural amphibian bio-turbation systems.
+                        </p>
+                        <a href="javascript:void(0)" onclick="showToast('Opening RMUC Research Journal paper...')" class="inline-block text-xs font-bold text-gold-400 hover:underline pt-2">
+                            Read Journal Paper &rarr;
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Research Card 3 -->
+                <div class="bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-gold-500/50 transition-all group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=800&auto=format&fit=crop" alt="Business Innovation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 bg-emerald-900 text-gold-300 text-[10px] font-bold uppercase px-2.5 py-1 rounded">Green Finance</span>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="font-serif font-bold text-lg text-white group-hover:text-gold-400 transition-colors">
+                            Bio-Diversity Credit Valuation Models
+                        </h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            The School of Royal Business pioneers global metrics for corporate investment in freshwater ecosystem restoration.
+                        </p>
+                        <a href="javascript:void(0)" onclick="showToast('Opening RMUC Research Journal paper...')" class="inline-block text-xs font-bold text-gold-400 hover:underline pt-2">
+                            Read Journal Paper &rarr;
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Campus News & Events Grid Section -->
+    <section id="news" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Latest News Column (8 cols) -->
+                <div class="lg:col-span-8 space-y-8">
+                    <div class="flex justify-between items-end">
+                        <div>
+                            <span class="text-emerald-800 font-bold uppercase text-xs tracking-wider">Campus Updates</span>
+                            <h2 class="font-serif text-3xl font-extrabold text-emerald-950">
+                                Latest News & Press Releases
+                            </h2>
+                        </div>
+                        <a href="javascript:void(0)" onclick="showToast('Loading full news archive...')" class="text-xs font-bold text-emerald-800 hover:text-gold-600 hidden sm:block">View All News &rarr;</a>
+                    </div>
+
+                    <div class="space-y-6">
+                        <!-- Featured Article Card -->
+                        <div class="bg-white rounded-2xl p-6 shadow-md border border-slate-200 hover:shadow-lg transition-all flex flex-col sm:flex-row gap-6 items-center">
+                            <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=600&auto=format&fit=crop" alt="Students in Quad" class="w-full sm:w-48 h-36 object-cover rounded-xl">
+                            <div class="space-y-2">
+                                <div class="flex items-center gap-3 text-xs text-slate-500">
+                                    <span class="text-emerald-800 font-bold"><i class="fa-solid fa-tag"></i> University Growth</span>
+                                    <span>&bull;</span>
+                                    <span>October 12, 2026</span>
+                                </div>
+                                <h3 class="font-serif font-bold text-lg text-emerald-950 hover:text-emerald-700 cursor-pointer">
+                                    RMUC Secures $42M Grant for Sustainable Aquatic Infrastructure
+                                </h3>
+                                <p class="text-xs text-slate-600 line-clamp-2">
+                                    Federal and provincial funding will expand the Royal Milkfrog Research Facility, creating 120 new doctoral fellowships.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Secondary Article Card -->
+                        <div class="bg-white rounded-2xl p-6 shadow-md border border-slate-200 hover:shadow-lg transition-all flex flex-col sm:flex-row gap-6 items-center">
+                            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=600&auto=format&fit=crop" alt="Lecture Hall" class="w-full sm:w-48 h-36 object-cover rounded-xl">
+                            <div class="space-y-2">
+                                <div class="flex items-center gap-3 text-xs text-slate-500">
+                                    <span class="text-emerald-800 font-bold"><i class="fa-solid fa-tag"></i> Academic Honors</span>
+                                    <span>&bull;</span>
+                                    <span>October 08, 2026</span>
+                                </div>
+                                <h3 class="font-serif font-bold text-lg text-emerald-950 hover:text-emerald-700 cursor-pointer">
+                                    Dean Elizabeth Tadpole Awarded Order of Canada for Environmental Ethics
+                                </h3>
+                                <p class="text-xs text-slate-600 line-clamp-2">
+                                    Recognizing over three decades of groundbreaking bio-ethics publications and dedication to amphibious preservation.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upcoming Events Column (4 cols) -->
+                <div class="lg:col-span-4 bg-emerald-900 text-white rounded-2xl p-6 shadow-xl border border-emerald-800 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between border-b border-emerald-800 pb-4 mb-6">
+                            <h3 class="font-serif font-bold text-xl text-white flex items-center gap-2">
+                                <i class="fa-solid fa-calendar-days text-gold-400"></i> Upcoming Events
+                            </h3>
+                            <span class="text-xs bg-emerald-800 text-gold-300 px-2 py-1 rounded">Fall Term</span>
+                        </div>
+
+                        <div class="space-y-4">
+                            <!-- Event Item 1 -->
+                            <div class="flex gap-4 items-center p-3 rounded-xl hover:bg-emerald-800/60 transition-all cursor-pointer" onclick="showToast('Event details sent to your calendar!')">
+                                <div class="bg-gold-500 text-emerald-950 font-bold rounded-lg p-2 text-center min-w-[50px]">
+                                    <div class="text-xs uppercase">OCT</div>
+                                    <div class="text-lg leading-none">24</div>
+                                </div>
+                                <div>
+                                    <h4 class="font-serif font-bold text-sm text-white">Annual Lilypad Gala & Alumni Reunion</h4>
+                                    <p class="text-xs text-slate-300">Grand Ballroom, Crestwood Campus &bull; 6:00 PM</p>
+                                </div>
+                            </div>
+
+                            <!-- Event Item 2 -->
+                            <div class="flex gap-4 items-center p-3 rounded-xl hover:bg-emerald-800/60 transition-all cursor-pointer" onclick="showToast('Event details sent to your calendar!')">
+                                <div class="bg-gold-500 text-emerald-950 font-bold rounded-lg p-2 text-center min-w-[50px]">
+                                    <div class="text-xs uppercase">NOV</div>
+                                    <div class="text-lg leading-none">05</div>
+                                </div>
+                                <div>
+                                    <h4 class="font-serif font-bold text-sm text-white">International Amphibian Science Symposium</h4>
+                                    <p class="text-xs text-slate-300">Aquatic Bio Center & Virtual &bull; 9:00 AM</p>
+                                </div>
+                            </div>
+
+                            <!-- Event Item 3 -->
+                            <div class="flex gap-4 items-center p-3 rounded-xl hover:bg-emerald-800/60 transition-all cursor-pointer" onclick="showToast('Event details sent to your calendar!')">
+                                <div class="bg-gold-500 text-emerald-950 font-bold rounded-lg p-2 text-center min-w-[50px]">
+                                    <div class="text-xs uppercase">NOV</div>
+                                    <div class="text-lg leading-none">18</div>
+                                </div>
+                                <div>
+                                    <h4 class="font-serif font-bold text-sm text-white">Fall Open House & Campus Discovery Day</h4>
+                                    <p class="text-xs text-slate-300">Student Quad &bull; 10:00 AM - 4:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-6 border-t border-emerald-800 mt-6">
+                        <button onclick="showToast('Subscribing to RMUC Events Calendar...')" class="w-full bg-emerald-800 hover:bg-emerald-700 text-gold-300 font-bold py-2.5 rounded-lg text-xs tracking-wider uppercase transition-colors">
+                            Sync to Calendar (.ics)
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter / Subscribe Banner -->
+    <section class="bg-gradient-to-r from-emerald-900 via-emerald-800 to-slate-900 text-white py-16">
+        <div class="max-w-5xl mx-auto px-4 text-center space-y-6">
+            <i class="fa-solid fa-paper-plane text-3xl text-gold-400"></i>
+            <h2 class="font-serif text-3xl font-extrabold text-white">Stay Connected with Royal Milkfrog</h2>
+            <p class="text-slate-300 text-sm max-w-xl mx-auto">
+                Subscribe to our monthly bulletin *The Leap* for admissions tips, research breakthroughs, and campus highlights.
+            </p>
+            <form onsubmit="handleNewsletterSubmit(event)" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                <input type="email" id="newsletter-email" required placeholder="Enter your email address..." class="bg-white/10 border border-white/20 text-white placeholder-slate-400 px-4 py-3 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-gold-400 flex-grow">
+                <button type="submit" class="bg-gold-500 hover:bg-gold-400 text-emerald-950 font-bold px-6 py-3 rounded-xl text-sm transition-all shadow-md">
+                    Subscribe
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 text-xs py-16 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800">
+                
+                <!-- Col 1: Brand & Address -->
+                <div class="lg:col-span-2 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gold-500 flex items-center justify-center text-emerald-950">
+                            <i class="fa-solid fa-frog text-xl"></i>
+                        </div>
+                        <div>
+                            <div class="font-serif text-base font-bold text-white tracking-wider">ROYAL MILKFROG UNIVERSITY</div>
+                            <div class="text-[10px] text-gold-400 uppercase tracking-widest">Of Canada</div>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 leading-relaxed text-xs max-w-sm">
+                        1888 Milkfrog Way, Crestwood Campus<br>
+                        Province of British Columbia, V8V 4M9, Canada<br>
+                        Toll Free: +1 (800) 555-RMUC | Local: (604) 555-0198
+                    </p>
+                    <div class="flex space-x-3 pt-2">
+                        <a href="javascript:void(0)" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-gold-500 hover:text-emerald-950 flex items-center justify-center transition-all"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="javascript:void(0)" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-gold-500 hover:text-emerald-950 flex items-center justify-center transition-all"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="javascript:void(0)" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-gold-500 hover:text-emerald-950 flex items-center justify-center transition-all"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="javascript:void(0)" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-gold-500 hover:text-emerald-950 flex items-center justify-center transition-all"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="javascript:void(0)" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-gold-500 hover:text-emerald-950 flex items-center justify-center transition-all"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Academics -->
+                <div class="space-y-3">
+                    <h4 class="font-serif font-bold text-white text-sm">Academics</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#academics" class="hover:text-gold-400 transition-colors">Amphibian Life Sciences</a></li>
+                        <li><a href="#academics" class="hover:text-gold-400 transition-colors">School of Royal Business</a></li>
+                        <li><a href="#academics" class="hover:text-gold-400 transition-colors">Frog Ecology & Engineering</a></li>
+                        <li><a href="#academics" class="hover:text-gold-400 transition-colors">Faculty of Leap Arts</a></li>
+                        <li><a href="#academics" class="hover:text-gold-400 transition-colors">Executive Online Programs</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Quick Links -->
+                <div class="space-y-3">
+                    <h4 class="font-serif font-bold text-white text-sm">Campus Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="javascript:void(0)" onclick="openModal('portal')" class="hover:text-gold-400 transition-colors">Canvas Student Portal</a></li>
+                        <li><a href="#academics" class="hover:text-gold-400 transition-colors">Library Catalog</a></li>
+                        <li><a href="javascript:void(0)" onclick="showToast('Campus security desk contacted.')" class="hover:text-gold-400 transition-colors">Campus Safety & Security</a></li>
+                        <li><a href="#admissions" class="hover:text-gold-400 transition-colors">Financial Aid & Awards</a></li>
+                        <li><a href="javascript:void(0)" onclick="showToast('Careers page loading...')" class="hover:text-gold-400 transition-colors">Careers at RMUC</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Governance & Legal -->
+                <div class="space-y-3">
+                    <h4 class="font-serif font-bold text-white text-sm">Governance</h4>
+                    <ul class="space-y-2">
+                        <li><a href="javascript:void(0)" class="hover:text-gold-400 transition-colors">Board of Governors</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-gold-400 transition-colors">University Senate</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-gold-400 transition-colors">Accreditation & Quality</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-gold-400 transition-colors">Privacy Policy</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-gold-400 transition-colors">Accessibility Statement</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-slate-500 gap-4">
+                <div>
+                    &copy; 2026 Royal Milkfrog University of Canada. All rights reserved. Registered Canadian Higher Education Institution.
+                </div>
+                <div class="flex items-center gap-2 text-gold-500">
+                    <i class="fa-solid fa-leaf"></i> Eco-Friendly & Carbon Neutral Campus
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Apply Now Modal -->
+    <div id="apply-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative border border-gold-500/30 max-h-[90vh] overflow-y-auto">
+            <button onclick="closeApplyModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 text-xl font-bold">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="text-center space-y-2 mb-6">
+                <div class="w-12 h-12 bg-emerald-900 text-gold-400 rounded-full flex items-center justify-center mx-auto text-xl">
+                    <i class="fa-solid fa-frog"></i>
+                </div>
+                <h3 class="font-serif font-bold text-2xl text-emerald-950">Start Your RMUC Application</h3>
+                <p class="text-xs text-slate-500">Fall 2027 Academic Year &bull; Official Portal</p>
+            </div>
+
+            <form onsubmit="handleApplySubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Full Legal Name</label>
+                    <input type="text" required placeholder="e.g. Eleanor Vance" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-emerald-800">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Email Address</label>
+                    <input type="email" required placeholder="eleanor.vance@example.com" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-emerald-800">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Intended Faculty</label>
+                    <select required class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-emerald-800">
+                        <option value="">Select a Faculty Program...</option>
+                        <option>Faculty of Amphibian Life Sciences</option>
+                        <option>School of Royal Business</option>
+                        <option>Department of Frog Ecology & Engineering</option>
+                        <option>Faculty of Arts & Leap Arts</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Current Educational Status</label>
+                    <select class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-emerald-800">
+                        <option>High School Senior</option>
+                        <option>Undergraduate Transfer</option>
+                        <option>Post-Graduate Applicant</option>
+                    </select>
+                </div>
+
+                <div class="pt-2">
+                    <button type="submit" class="w-full bg-emerald-900 hover:bg-emerald-800 text-gold-300 font-bold py-3 rounded-xl text-sm uppercase tracking-wider transition-all shadow-lg">
+                        Submit Quick Application
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Canvas / Student Portal Modal -->
+    <div id="portal-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-emerald-950 text-white rounded-2xl max-w-md w-full p-6 sm:p-8 shadow-2xl relative border border-gold-500/30">
+            <button onclick="closeModal('portal')" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="text-center space-y-2 mb-6">
+                <i class="fa-solid fa-user-shield text-3xl text-gold-400"></i>
+                <h3 class="font-serif font-bold text-xl text-white">RMUC Canvas & Portal Login</h3>
+                <p class="text-xs text-slate-400">Single Sign-On for Students & Staff</p>
+            </div>
+
+            <form onsubmit="handlePortalLogin(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-300 uppercase mb-1">RMUC ID / Username</label>
+                    <input type="text" placeholder="e.g. rm188829" required class="w-full bg-emerald-900 border border-emerald-700 text-white rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-gold-400">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Password</label>
+                    <input type="password" required class="w-full bg-emerald-900 border border-emerald-700 text-white rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-gold-400">
+                </div>
+                <button type="submit" class="w-full bg-gold-500 hover:bg-gold-400 text-emerald-950 font-bold py-3 rounded-xl text-sm transition-all shadow-md">
+                    Log In to Canvas
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 bg-emerald-900 text-white px-5 py-3 rounded-xl shadow-2xl border border-gold-500/40 flex items-center gap-3 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+        <i class="fa-solid fa-circle-info text-gold-400 text-lg"></i>
+        <span id="toast-message" class="text-xs font-medium">Notification message here</span>
+    </div>
+
+    <script>
+        // Programs Data Array
+        const programsData = [
+            {
+                id: 1,
+                title: "B.Sc. Amphibian Bio-Genomics",
+                faculty: "Faculty of Amphibian Life Sciences",
+                level: "undergrad",
+                duration: "4 Years",
+                desc: "Specialized study in tropical frog physiology, gene mapping, and pharmaceutical bio-prospecting.",
+                badge: "Top Rated"
+            },
+            {
+                id: 2,
+                title: "M.Sc. Freshwater Ecosystem Engineering",
+                faculty: "Department of Frog Ecology & Engineering",
+                level: "grad",
+                duration: "2 Years",
+                desc: "Design sustainable wetland corridors, urban bio-drainage networks, and eco-restoration barriers.",
+                badge: "High Research Output"
+            },
+            {
+                id: 3,
+                title: "Bachelor of Royal Sustainable Business (BBA)",
+                faculty: "School of Royal Business",
+                level: "undergrad",
+                duration: "4 Years",
+                desc: "Combining global finance with ESG frameworks, green supply chain dynamics, and ecological economics.",
+                badge: "Co-op Available"
+            },
+            {
+                id: 4,
+                title: "Ph.D. Bio-Acoustics & Animal Communication",
+                faculty: "Faculty of Amphibian Life Sciences",
+                level: "grad",
+                duration: "4 Years",
+                desc: "Pioneering soundscape ecology and acoustic monitoring across rainforest and temperate wetlands.",
+                badge: "Full Scholarship"
+            },
+            {
+                id: 5,
+                title: "B.A. Environmental Philosophy & Leap Arts",
+                faculty: "Faculty of Arts & Leap Arts",
+                level: "undergrad",
+                duration: "4 Years",
+                desc: "Exploring human-nature intersections, indigenous ecology knowledge, and climate storytelling.",
+                badge: "Interdisciplinary"
+            },
+            {
+                id: 6,
+                title: "Executive Online Certificate in Green Tech Leadership",
+                faculty: "School of Royal Business",
+                level: "online",
+                duration: "6 Months",
+                desc: "Flexible, self-paced online program for corporate leaders driving sustainability initiatives.",
+                badge: "100% Online"
+            }
+        ];
+
+        // Tour Data Array
+        const tourData = [
+            {
+                title: "Bio-Simulated Aquatic Complex",
+                tag: "Research Facility",
+                desc: "A world-first research facility providing exact micro-climate controls for amphibian genetics and ecosystem preservation studies.",
+                img: "https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=1000&auto=format&fit=crop"
+            },
+            {
+                title: "Royal Pavilion Library",
+                tag: "Academic Hub",
+                desc: "Featuring silent study sanctuaries, rare natural history collections, and 24/7 digital research assistance.",
+                img: "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1000&auto=format&fit=crop"
+            },
+            {
+                title: "Leap Center Student Union",
+                tag: "Student Life",
+                desc: "The heart of student activity including eco-cafes, indoor climbing, Olympic swimming pools, and club spaces.",
+                img: "https://images.unsplash.com/photo-1577412647305-991150c7d163?q=80&w=1000&auto=format&fit=crop"
+            },
+            {
+                title: "Emerald Residence Halls",
+                tag: "Campus Living",
+                desc: "LEED Platinum-certified dormitories featuring panoramic views of the BC lakefront and communal study lounges.",
+                img: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?q=80&w=1000&auto=format&fit=crop"
+            }
+        ];
+
+        let currentFilter = 'all';
+
+        // Render Programs Cards
+        function renderPrograms() {
+            const grid = document.getElementById('programs-grid');
+            const searchVal = document.getElementById('program-search').value.toLowerCase();
+
+            const filtered = programsData.filter(item => {
+                const matchesTab = currentFilter === 'all' || item.level === currentFilter;
+                const matchesSearch = item.title.toLowerCase().includes(searchVal) || item.faculty.toLowerCase().includes(searchVal);
+                return matchesTab && matchesSearch;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full text-center py-12 text-slate-500">
+                        <i class="fa-solid fa-circle-exclamation text-3xl mb-2 text-gold-500"></i>
+                        <p class="text-base font-semibold">No programs matched your search criteria.</p>
+                        <button onclick="resetFilters()" class="mt-4 text-xs font-bold text-emerald-800 hover:underline">Reset Filters</button>
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = filtered.map(prog => `
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
+                    <div>
+                        <div class="flex justify-between items-start gap-2 mb-3">
+                            <span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">${prog.badge}</span>
+                            <span class="text-xs text-slate-400 font-medium"><i class="fa-regular fa-clock mr-1"></i>${prog.duration}</span>
+                        </div>
+                        <h3 class="font-serif font-bold text-lg text-emerald-950 group-hover:text-emerald-700 transition-colors mb-2">${prog.title}</h3>
+                        <p class="text-xs font-semibold text-gold-600 mb-3">${prog.faculty}</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">${prog.desc}</p>
+                    </div>
+                    <div class="pt-6 border-t border-slate-100 mt-6 flex items-center justify-between">
+                        <button onclick="openApplyModal()" class="text-xs font-bold text-emerald-900 hover:text-gold-600 transition-colors flex items-center gap-1">
+                            Apply for this Program <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Program Filter Tab Handler
+        function setProgramFilter(filter) {
+            currentFilter = filter;
+            document.querySelectorAll('.prog-tab').forEach(btn => {
+                btn.classList.remove('bg-emerald-800', 'text-white');
+                btn.classList.add('bg-white', 'text-slate-700');
+            });
+            event.target.classList.remove('bg-white', 'text-slate-700');
+            event.target.classList.add('bg-emerald-800', 'text-white');
+            renderPrograms();
+        }
+
+        function filterPrograms() {
+            renderPrograms();
+        }
+
+        function resetFilters() {
+            document.getElementById('program-search').value = '';
+            setProgramFilter('all');
+        }
+
+        // Switch Virtual Tour Image
+        function switchTourLocation(index) {
+            const data = tourData[index];
+            document.getElementById('tour-image').src = data.img;
+            document.getElementById('tour-title').innerText = data.title;
+            document.getElementById('tour-desc').innerText = data.desc;
+            document.getElementById('tour-tag').innerText = data.tag;
+
+            const tabs = document.querySelectorAll('.tour-btn');
+            tabs.forEach((tab, i) => {
+                if(i === index) {
+                    tab.classList.add('bg-emerald-900', 'border-gold-400');
+                    tab.classList.remove('bg-emerald-900/40', 'border-transparent');
+                } else {
+                    tab.classList.remove('bg-emerald-900', 'border-gold-400');
+                    tab.classList.add('bg-emerald-900/40', 'border-transparent');
+                }
+            });
+        }
+
+        // Tuition Calculator Logic
+        function calculateTuition() {
+            const residency = document.getElementById('calc-residency').value;
+            const level = document.getElementById('calc-level').value;
+            const faculty = document.getElementById('calc-faculty').value;
+            const housing = document.getElementById('calc-housing').value;
+
+            let baseTuition = 7200;
+
+            if (residency === 'international') baseTuition *= 2.8;
+            if (level === 'grad') baseTuition += 2400;
+            if (level === 'phd') baseTuition += 1200;
+
+            if (faculty === 'business') baseTuition += 1800;
+            if (faculty === 'engineering') baseTuition += 2100;
+
+            let housingCost = 0;
+            if (housing === 'standard') housingCost = 8500;
+            if (housing === 'suite') housingCost = 11800;
+
+            const total = Math.round(baseTuition + housingCost);
+            document.getElementById('calc-total').innerText = `$${total.toLocaleString('en-CA')} CAD`;
+        }
+
+        // Modal Controls
+        function openApplyModal() {
+            document.getElementById('apply-modal').classList.remove('hidden');
+        }
+
+        function closeApplyModal() {
+            document.getElementById('apply-modal').classList.add('hidden');
+        }
+
+        function openModal(id) {
+            document.getElementById(`${id}-modal`).classList.remove('hidden');
+        }
+
+        function closeModal(id) {
+            document.getElementById(`${id}-modal`).classList.add('hidden');
+        }
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Smooth Scroll Helper
+        function scrollToSection(id) {
+            document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Toast Notification System
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-message').innerText = msg;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3500);
+        }
+
+        // Form Handlers
+        function handleApplySubmit(e) {
+            e.preventDefault();
+            closeApplyModal();
+            showToast('Application submitted successfully! Check your email for confirmation.');
+        }
+
+        function handlePortalLogin(e) {
+            e.preventDefault();
+            closeModal('portal');
+            showToast('Welcome back! Redirecting to RMUC Canvas Dashboard...');
+        }
+
+        function handleNewsletterSubmit(e) {
+            e.preventDefault();
+            document.getElementById('newsletter-email').value = '';
+            showToast('Thank you for subscribing to RMUC Newsletter!');
+        }
+
+        function handleHeaderSearch(e) {
+            if (e.key === 'Enter') {
+                const query = e.target.value;
+                document.getElementById('program-search').value = query;
+                scrollToSection('academics');
+                renderPrograms();
+                showToast(`Searching programs for "${query}"`);
+            }
+        }
+
+        // Initialize Page Data on Load
+        window.onload = function() {
+            renderPrograms();
+            calculateTuition();
+        };
+    </script>
+</body>
+</html>
